@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block judul %}Beranda{% endblock %}
+{% block konten %}
+<section class="hero">
+  <h1>Prediksi Kategori Harga Smartphone</h1>
+  <p>Aplikasi ini memakai <strong>Logistic Regression</strong> multikelas untuk memprediksi
+     kategori harga (0 sampai 3) dari spesifikasi smartphone, berdasarkan dataset
+     <em>Mobile Price Classification</em> (Kaggle).</p>
+  <div class="aksi">
+    <a class="tombol" href="{{ url_for('prediksi') }}">Coba Prediksi</a>
+    <a class="tombol sekunder" href="{{ url_for('evaluasi') }}">Lihat Evaluasi Model</a>
+  </div>
+</section>
+
+{% if siap %}
+<section class="kartu-grid">
+  <div class="kartu"><span class="angka">{{ laporan.jumlah_baris }}</span><span>Jumlah data</span></div>
+  <div class="kartu"><span class="angka">{{ laporan.jumlah_kolom - 1 }}</span><span>Jumlah fitur</span></div>
+  <div class="kartu"><span class="angka">{{ "%.2f"|format(laporan.metrik.akurasi_uji * 100) }}%</span><span>Akurasi data uji</span></div>
+  <div class="kartu"><span class="angka">4</span><span>Kelas harga (0&ndash;3)</span></div>
+</section>
+{% else %}
+<div class="peringatan">Model belum tersedia. Jalankan <code>python train_model.py</code> terlebih dahulu.</div>
+{% endif %}
+
+<section class="panel">
+  <h2>Arti Kelas Harga</h2>
+  <p>0 = Murah &nbsp;|&nbsp; 1 = Menengah &nbsp;|&nbsp; 2 = Tinggi &nbsp;|&nbsp; 3 = Sangat Tinggi</p>
+</section>
+{% endblock %}

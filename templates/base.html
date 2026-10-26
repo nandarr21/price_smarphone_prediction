@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block judul %}{% endblock %} | Prediksi Harga Smartphone</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-isi">
+      <a class="logo" href="{{ url_for('beranda') }}">📱 Harga Smartphone</a>
+      <nav>
+        <a href="{{ url_for('beranda') }}" class="{{ 'aktif' if request.endpoint == 'beranda' }}">Beranda</a>
+        <a href="{{ url_for('dataset') }}" class="{{ 'aktif' if request.endpoint == 'dataset' }}">Dataset</a>
+        <a href="{{ url_for('evaluasi') }}" class="{{ 'aktif' if request.endpoint == 'evaluasi' }}">Evaluasi</a>
+        <a href="{{ url_for('prediksi') }}" class="{{ 'aktif' if request.endpoint == 'prediksi' }}">Prediksi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block konten %}{% endblock %}
+  </main>
+
+  <footer>Machine Learning &middot; Logistic Regression</footer>
+</body>
+</html>

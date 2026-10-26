@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block judul %}Evaluasi Model{% endblock %}
+{% block konten %}
+<h1>Hasil Evaluasi Model</h1>
+<p class="catatan">Semua nilai dihitung pada <strong>data uji</strong> ({{ laporan.ukuran_uji }} data)
+   yang tidak dipakai saat training. Precision, recall, dan F1 memakai rata-rata <em>macro</em>.</p>
+
+<section class="kartu-grid">
+  <div class="kartu"><span class="angka">{{ "%.4f"|format(laporan.metrik.akurasi_uji) }}</span><span>Accuracy</span></div>
+  <div class="kartu"><span class="angka">{{ "%.4f"|format(laporan.metrik.precision_macro) }}</span><span>Precision</span></div>
+  <div class="kartu"><span class="angka">{{ "%.4f"|format(laporan.metrik.recall_macro) }}</span><span>Recall</span></div>
+  <div class="kartu"><span class="angka">{{ "%.4f"|format(laporan.metrik.f1_macro) }}</span><span>F1-score</span></div>
+  <div class="kartu"><span class="angka">{{ "%.4f"|format(laporan.metrik.roc_auc_ovr_macro) }}</span><span>ROC-AUC (OvR)</span></div>
+  <div class="kartu"><span class="angka">{{ "%.4f"|format(laporan.metrik.akurasi_latih) }}</span><span>Accuracy data latih</span></div>
+</section>
+
+<section class="panel">
+  <h2>Metrik per Kelas</h2>
+  <div class="gulir">
+    <table class="tabel">
+      <thead><tr><th>Kelas</th><th>Kategori</th><th>Precision</th><th>Recall</th><th>F1-score</th><th>Support</th></tr></thead>
+      <tbody>
+      {% for k in laporan.per_kelas %}
+        <tr>
+          <td>{{ k.kelas }}</td><td>{{ k.label }}</td>
+          <td>{{ "%.4f"|format(k.precision) }}</td>
+          <td>{{ "%.4f"|format(k.recall) }}</td>
+          <td>{{ "%.4f"|format(k.f1) }}</td>
+          <td>{{ k.support }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Confusion Matrix</h2>
+  <img class="gambar-tengah" src="{{ url_for('static', filename='img/confusion_matrix.png') }}" alt="Confusion matrix">
+</section>
+
+<section class="panel">
+  <h2>Distribusi Kelas</h2>
+  <img class="gambar-tengah" src="{{ url_for('static', filename='img/distribusi_kelas.png') }}" alt="Distribusi kelas">
+</section>
+{% endblock %}

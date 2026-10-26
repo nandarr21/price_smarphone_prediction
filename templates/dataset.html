@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block judul %}Analisis Dataset{% endblock %}
+{% block konten %}
+<h1>Analisis Dataset</h1>
+
+<section class="panel">
+  <h2>Ukuran Data</h2>
+  <p><strong>{{ laporan.jumlah_baris }}</strong> baris dan <strong>{{ laporan.jumlah_kolom }}</strong> kolom
+     (20 fitur + 1 target <code>price_range</code>).<br>
+     Pembagian data: <strong>{{ laporan.ukuran_latih }}</strong> data latih dan
+     <strong>{{ laporan.ukuran_uji }}</strong> data uji (80:20, <code>random_state=42</code>, <code>stratify=y</code>).</p>
+</section>
+
+<section class="panel">
+  <h2>5 Data Pertama</h2>
+  <div class="gulir">{{ laporan.head_html | safe }}</div>
+</section>
+
+<section class="panel">
+  <h2>Informasi Fitur</h2>
+  <div class="gulir">
+    <table class="tabel">
+      <thead><tr><th>Kolom</th><th>Tipe</th><th>Non-null</th><th>Nilai unik</th><th>Min</th><th>Maks</th></tr></thead>
+      <tbody>
+      {% for i in laporan.info_fitur %}
+        <tr><td>{{ i.kolom }}</td><td>{{ i.tipe }}</td><td>{{ i.non_null }}</td><td>{{ i.unik }}</td><td>{{ i.min }}</td><td>{{ i.max }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Nilai Kosong</h2>
+  {% if laporan.total_nilai_kosong == 0 %}
+    <p>Tidak ada nilai kosong pada dataset.</p>
+  {% else %}
+    <p>Total nilai kosong: <strong>{{ laporan.total_nilai_kosong }}</strong></p>
+  {% endif %}
+</section>
+
+<section class="panel">
+  <h2>Distribusi Target (price_range)</h2>
+  <div class="dua-kolom">
+    <div class="gulir">
+      <table class="tabel">
+        <thead><tr><th>Kelas</th><th>Kategori</th><th>Jumlah</th></tr></thead>
+        <tbody>
+        {% for d in laporan.distribusi_target %}
+          <tr><td>{{ d.kelas }}</td><td>{{ d.label }}</td><td>{{ d.jumlah }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <img src="{{ url_for('static', filename='img/distribusi_kelas.png') }}" alt="Grafik distribusi kelas">
+  </div>
+</section>
+{% endblock %}

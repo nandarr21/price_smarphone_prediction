@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block judul %}Prediksi{% endblock %}
+{% block konten %}
+<h1>Formulir Prediksi</h1>
+<p class="catatan">Isi spesifikasi smartphone di bawah ini. Rentang nilai diambil dari dataset pelatihan.</p>
+
+{% if galat %}
+<div class="peringatan">Terdapat isian yang belum valid. Periksa kembali kolom yang ditandai merah.</div>
+{% endif %}
+
+{% if hasil %}
+<section class="panel hasil">
+  <h2>Hasil Prediksi</h2>
+  <p class="kategori">Kategori {{ hasil.kelas }} &mdash; <strong>{{ hasil.label }}</strong></p>
+  <h3>Probabilitas tiap kelas</h3>
+  {% for p in hasil.probabilitas %}
+  <div class="baris-proba {{ 'menang' if p.kelas == hasil.kelas }}">
+    <span class="nama">{{ p.kelas }} &ndash; {{ p.label }}</span>
+    <div class="bar" role="progressbar" aria-label="Probabilitas {{ p.label }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ p.persen }}">
+      <div class="bar-isi" style="width: {{ p.persen }}%"></div>
+    </div>
+    <span class="persen">{{ "%.2f"|format(p.persen) }}%</span>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+<form method="post" class="panel">
+  <div class="form-grid">
+    {% for f in fitur %}
+    <div class="field {{ 'ada-galat' if galat.get(f.nama) }}">
+      <label for="{{ f.nama }}">{{ f.label }}</label>
+      {% if f.tipe == 'biner' %}
+        <select id="{{ f.nama }}" name="{{ f.nama }}" required>
+          <option value="1" {{ 'selected' if nilai_form.get(f.nama) == '1' }}>Ya</option>
+          <option value="0" {{ 'selected' if nilai_form.get(f.nama) == '0' }}>Tidak</option>
+        </select>
+      {% else %}
+        <input type="number" id="{{ f.nama }}" name="{{ f.nama }}"
+               value="{{ nilai_form.get(f.nama, '') }}"
+               min="{{ f.min }}" max="{{ f.max }}"
+               step="{{ '1' if f.tipe == 'int' else 'any' }}" required>
+        <small>Rentang data: {{ f.min }} &ndash; {{ f.max }}</small>
+      {% endif %}
+      {% if galat.get(f.nama) %}<span class="pesan-galat">{{ galat[f.nama] }}</span>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <button type="submit" class="tombol">Prediksi Kategori Harga</button>
+</form>
+{% endblock %}

@@ -1,0 +1,370 @@
+{
+  "jumlah_baris": 2000,
+  "jumlah_kolom": 21,
+  "head_html": "<table class=\"dataframe tabel\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>battery_power</th>\n      <th>blue</th>\n      <th>clock_speed</th>\n      <th>dual_sim</th>\n      <th>fc</th>\n      <th>four_g</th>\n      <th>int_memory</th>\n      <th>m_dep</th>\n      <th>mobile_wt</th>\n      <th>n_cores</th>\n      <th>pc</th>\n      <th>px_height</th>\n      <th>px_width</th>\n      <th>ram</th>\n      <th>sc_h</th>\n      <th>sc_w</th>\n      <th>talk_time</th>\n      <th>three_g</th>\n      <th>touch_screen</th>\n      <th>wifi</th>\n      <th>price_range</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>842</td>\n      <td>0</td>\n      <td>2.2</td>\n      <td>0</td>\n      <td>1</td>\n      <td>0</td>\n      <td>7</td>\n      <td>0.6</td>\n      <td>188</td>\n      <td>2</td>\n      <td>2</td>\n      <td>20</td>\n      <td>756</td>\n      <td>2549</td>\n      <td>9</td>\n      <td>7</td>\n      <td>19</td>\n      <td>0</td>\n      <td>0</td>\n      <td>1</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <td>1021</td>\n      <td>1</td>\n      <td>0.5</td>\n      <td>1</td>\n      <td>0</td>\n      <td>1</td>\n      <td>53</td>\n      <td>0.7</td>\n      <td>136</td>\n      <td>3</td>\n      <td>6</td>\n      <td>905</td>\n      <td>1988</td>\n      <td>2631</td>\n      <td>17</td>\n      <td>3</td>\n      <td>7</td>\n      <td>1</td>\n      <td>1</td>\n      <td>0</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>563</td>\n      <td>1</td>\n      <td>0.5</td>\n      <td>1</td>\n      <td>2</td>\n      <td>1</td>\n      <td>41</td>\n      <td>0.9</td>\n      <td>145</td>\n      <td>5</td>\n      <td>6</td>\n      <td>1263</td>\n      <td>1716</td>\n      <td>2603</td>\n      <td>11</td>\n      <td>2</td>\n      <td>9</td>\n      <td>1</td>\n      <td>1</td>\n      <td>0</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>615</td>\n      <td>1</td>\n      <td>2.5</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>10</td>\n      <td>0.8</td>\n      <td>131</td>\n      <td>6</td>\n      <td>9</td>\n      <td>1216</td>\n      <td>1786</td>\n      <td>2769</td>\n      <td>16</td>\n      <td>8</td>\n      <td>11</td>\n      <td>1</td>\n      <td>0</td>\n      <td>0</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>1821</td>\n      <td>1</td>\n      <td>1.2</td>\n      <td>0</td>\n      <td>13</td>\n      <td>1</td>\n      <td>44</td>\n      <td>0.6</td>\n      <td>141</td>\n      <td>2</td>\n      <td>14</td>\n      <td>1208</td>\n      <td>1212</td>\n      <td>1411</td>\n      <td>8</td>\n      <td>2</td>\n      <td>15</td>\n      <td>1</td>\n      <td>1</td>\n      <td>0</td>\n      <td>1</td>\n    </tr>\n  </tbody>\n</table>",
+  "info_fitur": [
+    {
+      "kolom": "battery_power",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 1094,
+      "min": 501,
+      "max": 1998
+    },
+    {
+      "kolom": "blue",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 2,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "kolom": "clock_speed",
+      "tipe": "float64",
+      "non_null": 2000,
+      "unik": 26,
+      "min": 0.5,
+      "max": 3.0
+    },
+    {
+      "kolom": "dual_sim",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 2,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "kolom": "fc",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 20,
+      "min": 0,
+      "max": 19
+    },
+    {
+      "kolom": "four_g",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 2,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "kolom": "int_memory",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 63,
+      "min": 2,
+      "max": 64
+    },
+    {
+      "kolom": "m_dep",
+      "tipe": "float64",
+      "non_null": 2000,
+      "unik": 10,
+      "min": 0.1,
+      "max": 1.0
+    },
+    {
+      "kolom": "mobile_wt",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 121,
+      "min": 80,
+      "max": 200
+    },
+    {
+      "kolom": "n_cores",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 8,
+      "min": 1,
+      "max": 8
+    },
+    {
+      "kolom": "pc",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 21,
+      "min": 0,
+      "max": 20
+    },
+    {
+      "kolom": "px_height",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 1137,
+      "min": 0,
+      "max": 1960
+    },
+    {
+      "kolom": "px_width",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 1109,
+      "min": 500,
+      "max": 1998
+    },
+    {
+      "kolom": "ram",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 1562,
+      "min": 256,
+      "max": 3998
+    },
+    {
+      "kolom": "sc_h",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 15,
+      "min": 5,
+      "max": 19
+    },
+    {
+      "kolom": "sc_w",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 19,
+      "min": 0,
+      "max": 18
+    },
+    {
+      "kolom": "talk_time",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 19,
+      "min": 2,
+      "max": 20
+    },
+    {
+      "kolom": "three_g",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 2,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "kolom": "touch_screen",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 2,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "kolom": "wifi",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 2,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "kolom": "price_range",
+      "tipe": "int64",
+      "non_null": 2000,
+      "unik": 4,
+      "min": 0,
+      "max": 3
+    }
+  ],
+  "total_nilai_kosong": 0,
+  "distribusi_target": [
+    {
+      "kelas": 0,
+      "label": "Murah",
+      "jumlah": 500
+    },
+    {
+      "kelas": 1,
+      "label": "Menengah",
+      "jumlah": 500
+    },
+    {
+      "kelas": 2,
+      "label": "Tinggi",
+      "jumlah": 500
+    },
+    {
+      "kelas": 3,
+      "label": "Sangat Tinggi",
+      "jumlah": 500
+    }
+  ],
+  "ukuran_latih": 1600,
+  "ukuran_uji": 400,
+  "metrik": {
+    "akurasi_latih": 0.976875,
+    "akurasi_uji": 0.965,
+    "precision_macro": 0.9650445632798574,
+    "recall_macro": 0.965,
+    "f1_macro": 0.9649863177272501,
+    "roc_auc_ovr_macro": 0.9986666666666667
+  },
+  "per_kelas": [
+    {
+      "kelas": 0,
+      "label": "Murah",
+      "precision": 0.98989898989899,
+      "recall": 0.98,
+      "f1": 0.9849246231155779,
+      "support": 100
+    },
+    {
+      "kelas": 1,
+      "label": "Menengah",
+      "precision": 0.96,
+      "recall": 0.96,
+      "f1": 0.96,
+      "support": 100
+    },
+    {
+      "kelas": 2,
+      "label": "Tinggi",
+      "precision": 0.9494949494949495,
+      "recall": 0.94,
+      "f1": 0.9447236180904522,
+      "support": 100
+    },
+    {
+      "kelas": 3,
+      "label": "Sangat Tinggi",
+      "precision": 0.9607843137254902,
+      "recall": 0.98,
+      "f1": 0.9702970297029703,
+      "support": 100
+    }
+  ],
+  "confusion_matrix": [
+    [
+      98,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      96,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      94,
+      4
+    ],
+    [
+      0,
+      0,
+      2,
+      98
+    ]
+  ],
+  "statistik_fitur": {
+    "battery_power": {
+      "min": 501,
+      "max": 1998,
+      "mean": 1238.518
+    },
+    "blue": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.495
+    },
+    "clock_speed": {
+      "min": 0.5,
+      "max": 3.0,
+      "mean": 1.522
+    },
+    "dual_sim": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.509
+    },
+    "fc": {
+      "min": 0,
+      "max": 19,
+      "mean": 4.309
+    },
+    "four_g": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.521
+    },
+    "int_memory": {
+      "min": 2,
+      "max": 64,
+      "mean": 32.047
+    },
+    "m_dep": {
+      "min": 0.1,
+      "max": 1.0,
+      "mean": 0.502
+    },
+    "mobile_wt": {
+      "min": 80,
+      "max": 200,
+      "mean": 140.249
+    },
+    "n_cores": {
+      "min": 1,
+      "max": 8,
+      "mean": 4.521
+    },
+    "pc": {
+      "min": 0,
+      "max": 20,
+      "mean": 9.916
+    },
+    "px_height": {
+      "min": 0,
+      "max": 1960,
+      "mean": 645.108
+    },
+    "px_width": {
+      "min": 500,
+      "max": 1998,
+      "mean": 1251.515
+    },
+    "ram": {
+      "min": 256,
+      "max": 3998,
+      "mean": 2124.213
+    },
+    "sc_h": {
+      "min": 5,
+      "max": 19,
+      "mean": 12.306
+    },
+    "sc_w": {
+      "min": 0,
+      "max": 18,
+      "mean": 5.767
+    },
+    "talk_time": {
+      "min": 2,
+      "max": 20,
+      "mean": 11.011
+    },
+    "three_g": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.761
+    },
+    "touch_screen": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.503
+    },
+    "wifi": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.507
+    }
+  }
+}
